@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             MusicData("PLAY", "Alan Walker, K-391, Tungevaag, Mangoo", "2:49", R.drawable.music_album_icon_1, R.raw.music1),
             MusicData("Sad Sometimes", "Alan Walker, CORSAK & Huang Xiaoyun", "3:19", R.drawable.music_album_icon_1, R.raw.music2),
             MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_1, R.raw.music2),
-            MusicData("White Ferrari", "Frank Ocean", "4:08", R.drawable.music_album_icon_1, R.raw.music4),
+            MusicData("White Ferrari", "Frank Ocean", "4:08", R.drawable.music_album_icon_2, R.raw.music4),
             MusicData("i love you jxnso", "so cute", "4:08", R.drawable.music_album_icon_1, R.raw.music4)
             // 다른 음악들 추가
         )

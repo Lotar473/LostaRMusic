@@ -19,6 +19,7 @@ class MusicPlayerActivity : AppCompatActivity() {
     private lateinit var seekBar: SeekBar
     private lateinit var musicTitleTextView: TextView
     private lateinit var artistTextView: TextView
+    private lateinit var albumImageView: ImageView // 추가: 앨범 이미지뷰 변수 선언
     private var musicList: MutableList<MusicData> = mutableListOf()
     private var currentMusicIndex: Int = 0
 
@@ -41,6 +42,7 @@ class MusicPlayerActivity : AppCompatActivity() {
         seekBar = findViewById(R.id.seekBar)
         musicTitleTextView = findViewById(R.id.titleTextView)
         artistTextView = findViewById(R.id.artistTextView)
+        albumImageView = findViewById(R.id.albumImageView) // 추가: 앨범 이미지뷰 초기화
 
         // 초기 노래 설정
         setMusic(currentMusicIndex)
@@ -100,7 +102,7 @@ class MusicPlayerActivity : AppCompatActivity() {
         musicList.add(MusicData("PLAY", "Alan Walker, K-391, Tungevaag, Mangoo", "3:24", R.drawable.music_album_icon_1, R.raw.music1))
         musicList.add(MusicData("Sad Sometimes", "Alan Walker, CORSAK & Huang Xiaoyun", "3:19", R.drawable.music_album_icon_1, R.raw.music2))
         musicList.add(MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_1, R.raw.music2))
-        musicList.add(MusicData("White Ferrari", "Frank Ocean", "4:08", R.drawable.music_album_icon_1, R.raw.music4))
+        musicList.add(MusicData("White Ferrari", "Frank Ocean", "4:08", R.drawable.music_album_icon_2, R.raw.music4))
         // musicList.add(MusicData(R.drawable.album_image_2, "노래 제목 2", "아티스트 2", R.raw.music_2))
         // ...
     }
@@ -114,6 +116,7 @@ class MusicPlayerActivity : AppCompatActivity() {
         musicTitleTextView.text = musicData.title
         artistTextView.text = musicData.artist
         seekBar.max = mediaPlayer.duration
+        albumImageView.setImageResource(musicData.albumImageResId) // 앨범 이미지 설정
     }
 
     private fun playMusic() {

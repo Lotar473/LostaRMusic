@@ -78,8 +78,7 @@
             android:layout_width="220dp"
             android:layout_height="220dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="210dp"
-            android:src="@drawable/music_album_icon_1"/>
+            android:layout_marginTop="210dp"/>
 
     <!-- SeekBar -->
     <SeekBar
