@@ -8,6 +8,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.net.Uri
+import android.widget.ListView
 
 class MusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
@@ -19,7 +20,8 @@ class MusicPlayerActivity : AppCompatActivity() {
     private lateinit var seekBar: SeekBar
     private lateinit var musicTitleTextView: TextView
     private lateinit var artistTextView: TextView
-    private lateinit var albumImageView: ImageView // 추가: 앨범 이미지뷰 변수 선언
+    private lateinit var albumImageView: ImageView
+    private lateinit var musicListView: ListView // 음악 목록을 나타내는 ListView 추가
     private var musicList: MutableList<MusicData> = mutableListOf()
     private var currentMusicIndex: Int = 0
 
@@ -32,9 +34,9 @@ class MusicPlayerActivity : AppCompatActivity() {
 
         // 미디어 플레이어 초기화
         mediaPlayer = MediaPlayer()
-
         handler = Handler()
 
+        // UI 요소 초기화
         playPauseButton = findViewById(R.id.playPauseButton)
         previousButton = findViewById(R.id.previousButton)
         nextButton = findViewById(R.id.nextButton)
@@ -42,7 +44,7 @@ class MusicPlayerActivity : AppCompatActivity() {
         seekBar = findViewById(R.id.seekBar)
         musicTitleTextView = findViewById(R.id.titleTextView)
         artistTextView = findViewById(R.id.artistTextView)
-        albumImageView = findViewById(R.id.albumImageView) // 추가: 앨범 이미지뷰 초기화
+        albumImageView = findViewById(R.id.albumImageView)
 
         // 초기 노래 설정
         setMusic(currentMusicIndex)
@@ -90,6 +92,12 @@ class MusicPlayerActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
+        // ListView 항목 클릭 리스너 설정
+        musicListView.setOnItemClickListener { parent, view, position, id ->
+            currentMusicIndex = position
+            setMusic(currentMusicIndex)
+        }
+
         // MediaPlayer 상태 변경 감지
         mediaPlayer.setOnCompletionListener {
             stopMusic()
@@ -97,14 +105,14 @@ class MusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun initMusicList() {
-        // 여기에 노래 데이터를 초기화합니다.
+        // 음악 데이터를 초기화합니다.
         // 예시:
         musicList.add(MusicData("PLAY", "Alan Walker, K-391, Tungevaag, Mangoo", "3:24", R.drawable.music_album_icon_1, R.raw.music1))
         musicList.add(MusicData("Sad Sometimes", "Alan Walker, CORSAK & Huang Xiaoyun", "3:19", R.drawable.music_album_icon_1, R.raw.music2))
-        musicList.add(MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_1, R.raw.music2))
+        musicList.add(MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_1, R.raw.music3))
         musicList.add(MusicData("White Ferrari", "Frank Ocean", "4:08", R.drawable.music_album_icon_2, R.raw.music4))
-        // musicList.add(MusicData(R.drawable.album_image_2, "노래 제목 2", "아티스트 2", R.raw.music_2))
-        // ...
+        musicList.add(MusicData("Shiawase (VIP)", "Dion Timmer", "4:08", R.drawable.music_album_icon_3, R.raw.music5))
+        // 추가 음악 데이터를 여기에 추가할 수 있습니다.
     }
 
     private fun setMusic(index: Int) {
@@ -116,7 +124,8 @@ class MusicPlayerActivity : AppCompatActivity() {
         musicTitleTextView.text = musicData.title
         artistTextView.text = musicData.artist
         seekBar.max = mediaPlayer.duration
-        albumImageView.setImageResource(musicData.albumImageResId) // 앨범 이미지 설정
+        albumImageView.setImageResource(musicData.albumImageResId)
+        playMusic() // 음악을 설정할 때 바로 재생하도록 호출
     }
 
     private fun playMusic() {
