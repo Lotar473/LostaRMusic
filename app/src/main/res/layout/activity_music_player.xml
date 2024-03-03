@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_main_2_blur">
+    <TextView
+            android:id="@+id/artistTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/albumImageView"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/seoul_hangang_b"
+            android:textSize="20sp"
+            android:layout_marginTop="-278dp"/>
+
+    <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/artistTextView"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:fontFamily="@font/seoul_namsan_eb"
+            android:layout_marginTop="-95dp"/>
+
+
+    <!-- 중앙에 배치할 버튼 -->
+    <ImageView
+            android:id="@+id/playPauseButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/ic_play"
+            android:layout_below="@id/seekBar"/> <!-- seekBar 아래에 배치 -->
+ <!-- 재생 아이콘 -->
+
+    <!-- 왼쪽에 배치할 버튼 -->
+    <ImageView
+            android:id="@+id/previousButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/seekBar"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_previous"
+            android:layout_alignParentStart="true"/> <!-- 왼쪽에 배치 -->
+
+    <!-- 오른쪽에 배치할 버튼 -->
+    <ImageView
+            android:id="@+id/nextButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/seekBar"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_next"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"/> <!-- 오른쪽 마진 -->
+
+    <ImageView
+            android:id="@+id/lyricsButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginTop="-122dp"
+            android:src="@drawable/ic_lyrics"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/seekBar"/> <!-- seekBar 아래에 배치 -->
+
+    <!-- 앨범 이미지뷰 -->
+    <ImageView
+            android:id="@+id/albumImageView"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="210dp"
+            android:src="@drawable/music_album_icon_1"/>
+
+    <!-- SeekBar -->
+    <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/albumImageView"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+</RelativeLayout>
