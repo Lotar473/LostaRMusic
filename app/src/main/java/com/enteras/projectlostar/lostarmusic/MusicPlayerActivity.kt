@@ -1,14 +1,14 @@
 package com.enteras.projectlostar.lostarmusic
 
 import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import android.net.Uri
-import android.widget.ListView
+import android.content.Intent
 
 class MusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
@@ -21,7 +21,6 @@ class MusicPlayerActivity : AppCompatActivity() {
     private lateinit var musicTitleTextView: TextView
     private lateinit var artistTextView: TextView
     private lateinit var albumImageView: ImageView
-    private lateinit var musicListView: ListView // 음악 목록을 나타내는 ListView 추가
     private var musicList: MutableList<MusicData> = mutableListOf()
     private var currentMusicIndex: Int = 0
 
@@ -29,7 +28,6 @@ class MusicPlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_music_player)
 
-        // 음악 데이터 초기화
         initMusicList()
 
         // 미디어 플레이어 초기화
@@ -79,6 +77,15 @@ class MusicPlayerActivity : AppCompatActivity() {
             // 가사 표시 기능 구현
         }
 
+        val backButton: ImageView = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            // Intent를 생성하여 메인 화면으로 이동
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
         // SeekBar 변경 리스너 설정
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -91,12 +98,6 @@ class MusicPlayerActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
-
-        // ListView 항목 클릭 리스너 설정
-        musicListView.setOnItemClickListener { parent, view, position, id ->
-            currentMusicIndex = position
-            setMusic(currentMusicIndex)
-        }
 
         // MediaPlayer 상태 변경 감지
         mediaPlayer.setOnCompletionListener {
