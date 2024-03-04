@@ -9,6 +9,8 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.os.Looper
+import kotlin.random.Random
 
 class MusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
@@ -17,12 +19,18 @@ class MusicPlayerActivity : AppCompatActivity() {
     private lateinit var previousButton: ImageView
     private lateinit var nextButton: ImageView
     private lateinit var lyricsButton: ImageView
+    private lateinit var repeatButton: ImageView
+    private lateinit var randomPlayButton: ImageView
     private lateinit var seekBar: SeekBar
     private lateinit var musicTitleTextView: TextView
     private lateinit var artistTextView: TextView
     private lateinit var albumImageView: ImageView
+    private lateinit var timeRemainingTextView: TextView
     private var musicList: MutableList<MusicData> = mutableListOf()
     private var currentMusicIndex: Int = 0
+    private var isRepeatEnabled: Boolean = false
+    private var isRandomPlayEnabled: Boolean = false
+    private var playedIndexes: MutableList<Int> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,24 +38,21 @@ class MusicPlayerActivity : AppCompatActivity() {
 
         initMusicList()
 
-        // 미디어 플레이어 초기화
         mediaPlayer = MediaPlayer()
-        handler = Handler()
+        handler = Handler(Looper.getMainLooper())
 
-        // UI 요소 초기화
         playPauseButton = findViewById(R.id.playPauseButton)
-        previousButton = findViewById(R.id.previousButton)
-        nextButton = findViewById(R.id.nextButton)
-        lyricsButton = findViewById(R.id.lyricsButton)
         seekBar = findViewById(R.id.seekBar)
+        timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
+        repeatButton = findViewById(R.id.repeatButton)
+        randomPlayButton = findViewById(R.id.randomPlayButton)
         musicTitleTextView = findViewById(R.id.titleTextView)
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
+        timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
 
-        // 초기 노래 설정
         setMusic(currentMusicIndex)
 
-        // 플레이 / 일시 정지 버튼 클릭 리스너
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {
                 pauseMusic()
@@ -56,37 +61,61 @@ class MusicPlayerActivity : AppCompatActivity() {
             }
         }
 
-        // 이전 버튼 클릭 리스너
+        previousButton = findViewById(R.id.previousButton)
         previousButton.setOnClickListener {
-            if (currentMusicIndex > 0) {
-                currentMusicIndex--
-                setMusic(currentMusicIndex)
+            if (isRandomPlayEnabled) {
+                playPreviousRandomMusic()
+            } else {
+                playPreviousMusic()
             }
         }
 
-        // 다음 버튼 클릭 리스너
+        nextButton = findViewById(R.id.nextButton)
         nextButton.setOnClickListener {
             if (currentMusicIndex < musicList.size - 1) {
                 currentMusicIndex++
                 setMusic(currentMusicIndex)
+            } else {
+                playNextMusic()
             }
-        }
-
-        // 가사 버튼 클릭 리스너
-        lyricsButton.setOnClickListener {
-            // 가사 표시 기능 구현
         }
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            // Intent를 생성하여 메인 화면으로 이동
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
+        mediaPlayer.setOnCompletionListener {
+            stopMusic()
+            if (isRepeatEnabled) {
+                setMusic(currentMusicIndex)
+            } else if (isRandomPlayEnabled) {
+                playNextRandomMusic()
+            } else {
+                playNextMusic()
+            }
+        }
 
-        // SeekBar 변경 리스너 설정
+        repeatButton.setOnClickListener {
+            isRepeatEnabled = !isRepeatEnabled
+            if (isRepeatEnabled) {
+                repeatButton.setImageResource(R.drawable.ic_repeat_enabled)
+            } else {
+                repeatButton.setImageResource(R.drawable.ic_repeat)
+            }
+        }
+
+        randomPlayButton.setOnClickListener {
+            isRandomPlayEnabled = !isRandomPlayEnabled
+            if (isRandomPlayEnabled) {
+                randomPlayButton.setImageResource(R.drawable.ic_random_enabled)
+            } else {
+                randomPlayButton.setImageResource(R.drawable.ic_random)
+            }
+        }
+
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
@@ -98,26 +127,22 @@ class MusicPlayerActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
-
-        // MediaPlayer 상태 변경 감지
-        mediaPlayer.setOnCompletionListener {
-            stopMusic()
-        }
     }
 
     private fun initMusicList() {
-        // 음악 데이터를 초기화합니다.
-        // 예시:
-        musicList.add(MusicData("PLAY", "Alan Walker, K-391, Tungevaag, Mangoo", "3:24", R.drawable.music_album_icon_1, R.raw.music1))
-        musicList.add(MusicData("Sad Sometimes", "Alan Walker, CORSAK & Huang Xiaoyun", "3:19", R.drawable.music_album_icon_1, R.raw.music2))
-        musicList.add(MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_1, R.raw.music3))
-        musicList.add(MusicData("White Ferrari", "Frank Ocean", "4:08", R.drawable.music_album_icon_2, R.raw.music4))
-        musicList.add(MusicData("Shiawase (VIP)", "Dion Timmer", "4:08", R.drawable.music_album_icon_3, R.raw.music5))
-        // 추가 음악 데이터를 여기에 추가할 수 있습니다.
+        // Initialize music data
+        // Example:
+        musicList.add(MusicData("PLAY", "Alan Walker, K-391, Tungevaag, Mangoo", "3:24", R.drawable.music_album_icon_5, R.raw.music1))
+        musicList.add(MusicData("Sad Sometimes", "Alan Walker, CORSAK & Huang Xiaoyun", "3:19", R.drawable.music_album_icon_6, R.raw.music2))
+        musicList.add(MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_7, R.raw.music3))
+        musicList.add(MusicData("We'll Meet Again", "TheFatRat & Laura Brehm", "3:15", R.drawable.music_album_icon_4, R.raw.music4))
+        musicList.add(MusicData("Shiawase (VIP)", "Dion Timmer", "3:02", R.drawable.music_album_icon_3, R.raw.music5))
+        // Add additional music data here if needed
     }
 
     private fun setMusic(index: Int) {
-        val musicData = musicList[index]
+        val newIndex = if (isRandomPlayEnabled) getRandomIndex() else index
+        val musicData = musicList[newIndex]
         val uri = Uri.parse("android.resource://${packageName}/${musicData.rawResId}")
         mediaPlayer.reset()
         mediaPlayer.setDataSource(this, uri)
@@ -126,7 +151,34 @@ class MusicPlayerActivity : AppCompatActivity() {
         artistTextView.text = musicData.artist
         seekBar.max = mediaPlayer.duration
         albumImageView.setImageResource(musicData.albumImageResId)
-        playMusic() // 음악을 설정할 때 바로 재생하도록 호출
+        playMusic()
+
+        // 현재 선택한 노래의 인덱스를 playedIndexes에 추가
+        playedIndexes.add(newIndex)
+    }
+
+    private fun setNextMusicIndex(): Int {
+        val nextIndex = currentMusicIndex + 1
+        return if (nextIndex >= musicList.size) {
+            if (isRepeatEnabled) {
+                0 // 반복 모드인 경우 첫 번째 노래를 선택
+            } else {
+                // 모든 노래가 재생된 경우, playedIndexes를 초기화하고 새로운 재생 목록을 생성
+                resetPlayedIndexes()
+                nextIndex // 랜덤 플레이 모드인 경우 다음 노래를 무작위로 선택
+            }
+        } else {
+            nextIndex
+        }
+    }
+
+    private fun setPreviousMusicIndex(): Int {
+        var previousIndex = currentMusicIndex - 1
+        return if (previousIndex < 0) {
+            musicList.size - 1
+        } else {
+            previousIndex
+        }
     }
 
     private fun playMusic() {
@@ -147,22 +199,84 @@ class MusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun updateSeekBar() {
-        val delayMillis: Long = 1000
+        try {
+            if (::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
+                val duration = mediaPlayer.duration
+                val currentPosition = mediaPlayer.currentPosition
+                val remainingTime = duration - currentPosition
 
-        handler.postDelayed(object : Runnable {
-            override fun run() {
-                if (mediaPlayer.isPlaying) {
-                    val currentPosition = mediaPlayer.currentPosition
-                    seekBar.progress = currentPosition
-                    handler.postDelayed(this, delayMillis)
-                }
+                val minutes = remainingTime / 1000 / 60
+                val seconds = (remainingTime / 1000) % 60
+
+                val timeRemainingText = String.format("%02d:%02d", minutes, seconds)
+                timeRemainingTextView.text = timeRemainingText
+
+                seekBar.progress = currentPosition
+
+                handler.postDelayed({
+                    updateSeekBar() // 재귀적으로 호출하지 않고 해당 함수를 호출, 오류 방지
+                }, 1000)
+            } else {
+                handler.removeCallbacksAndMessages(null) // MediaPlayer가 재생 중이 아닐 때 handler의 모든 콜백 및 메시지 제거
             }
-        }, delayMillis)
+        } catch (e: IllegalStateException) {
+            // MediaPlayer가 예상치 못한 상태에 있을 때의 예외 처리
+            e.printStackTrace()
+        }
+    }
+
+    private fun getRandomIndex(): Int {
+        if (musicList.isEmpty()) return 0 // 음악 리스트가 비어 있을 때, 첫 번째 곡의 인덱스를 반환
+
+        // playedIndexes에 포함되지 않은 곡들의 인덱스를 저장할 리스트
+        val availableIndexes = mutableListOf<Int>()
+
+        // playedIndexes에 포함되지 않은 곡들의 인덱스를 찾아 availableIndexes에 추가
+        for (i in musicList.indices) {
+            if (i !in playedIndexes) {
+                availableIndexes.add(i)
+            }
+        }
+
+        // 만약 availableIndexes가 비어 있다면, 모든 곡이 재생되었으므로 playedIndexes를 초기화하고 새로운 재생 목록을 생성
+        if (availableIndexes.isEmpty()) {
+            playedIndexes.clear()
+            return (0 until musicList.size).random()
+        }
+
+        // availableIndexes에서 랜덤으로 인덱스 선택
+        val randomIndex = availableIndexes.random()
+        return randomIndex
+    }
+
+    private fun resetPlayedIndexes() {
+        playedIndexes.clear()
+    }
+
+    private fun playNextMusic() {
+        currentMusicIndex = setNextMusicIndex()
+        setMusic(currentMusicIndex)
+    }
+
+    private fun playPreviousMusic() {
+        currentMusicIndex = setPreviousMusicIndex()
+        setMusic(currentMusicIndex)
+    }
+
+    private fun playPreviousRandomMusic() {
+        if (playedIndexes.size <= 1) return // No previous music to play
+        playedIndexes.removeAt(playedIndexes.size - 1) // Remove the last played music index
+        val previousIndex = playedIndexes[playedIndexes.size - 1]
+        setMusic(previousIndex)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer.release()
-        handler.removeCallbacksAndMessages(null)
+    }
+
+    private fun playNextRandomMusic() {
+        val nextIndex = getRandomIndex()
+        setMusic(nextIndex)
     }
 }

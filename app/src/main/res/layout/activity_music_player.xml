@@ -29,25 +29,55 @@
             android:fontFamily="@font/seoul_namsan_eb"
             android:layout_marginTop="-95dp"/>
 
+    <TextView
+            android:id="@+id/timeRemainingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:fontFamily="@font/seoul_hangang_m"
+            android:layout_marginTop="3dp"/>
+
     <!-- 중앙에 배치할 버튼 -->
     <ImageView
             android:id="@+id/playPauseButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/ic_play"
             android:layout_below="@id/seekBar"/> <!-- seekBar 아래에 배치 -->
     <!-- 재생 아이콘 -->
+    <ImageView
+            android:id="@+id/repeatButton"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_below="@id/seekBar"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_repeat"
+            android:layout_alignParentStart="true"/>
 
-    <!-- 왼쪽에 배치할 버튼 -->
+    <ImageView
+            android:id="@+id/randomPlayButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/seekBar"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_random"
+            android:layout_alignParentEnd="true"/>
+
     <ImageView
             android:id="@+id/previousButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@id/seekBar"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="95dp"
             android:src="@drawable/ic_previous"
             android:layout_alignParentStart="true"/> <!-- 왼쪽에 배치 -->
 
@@ -60,7 +90,7 @@
             android:layout_marginTop="30dp"
             android:src="@drawable/ic_next"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="30dp"/> <!-- 오른쪽 마진 -->
+            android:layout_marginEnd="95dp"/> <!-- 오른쪽 마진 -->
 
     <ImageView
             android:id="@+id/lyricsButton"
