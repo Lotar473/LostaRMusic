@@ -24,6 +24,10 @@
         <activity
                 android:name=".MusicPlayerActivity"
                 android:exported="true"/>
+        <activity
+                android:name=".SettingsActivity"
+                android:exported="true">
+        </activity>
     </application>
 
 </manifest>

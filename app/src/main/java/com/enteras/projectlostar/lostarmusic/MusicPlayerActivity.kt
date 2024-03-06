@@ -137,6 +137,8 @@ class MusicPlayerActivity : AppCompatActivity() {
         musicList.add(MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_7, R.raw.music3))
         musicList.add(MusicData("We'll Meet Again", "TheFatRat & Laura Brehm", "3:15", R.drawable.music_album_icon_4, R.raw.music4))
         musicList.add(MusicData("Shiawase (VIP)", "Dion Timmer", "3:02", R.drawable.music_album_icon_3, R.raw.music5))
+        musicList.add(MusicData("KOCMOC UNLEASHED", "G2961", "1:29", R.drawable.music_album_icon_8, R.raw.music6))
+        musicList.add(MusicData("Lone (Slow Hours Remix)", "What So Not", "4:33", R.drawable.music_album_icon_9, R.raw.music7))
         // Add additional music data here if needed
     }
 
@@ -217,7 +219,8 @@ class MusicPlayerActivity : AppCompatActivity() {
                     updateSeekBar() // 재귀적으로 호출하지 않고 해당 함수를 호출, 오류 방지
                 }, 1000)
             } else {
-                handler.removeCallbacksAndMessages(null) // MediaPlayer가 재생 중이 아닐 때 handler의 모든 콜백 및 메시지 제거
+                // mediaPlayer가 초기화되지 않았거나 재생 중이 아닐 때, handler의 모든 콜백 및 메시지 제거
+                handler.removeCallbacksAndMessages(null)
             }
         } catch (e: IllegalStateException) {
             // MediaPlayer가 예상치 못한 상태에 있을 때의 예외 처리

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!-- RecyclerView 추가 -->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    <!-- 메뉴 바 추가 -->
+    <LinearLayout
+            android:id="@+id/menuBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/black">
+
+        <!-- 홈 버튼 -->
+        <ImageView
+                android:id="@+id/homeButton"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_home"
+                android:scaleType="centerInside"
+                android:padding="8dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="70dp" />
+
+        <!-- 플레이리스트 버튼 -->
+        <ImageView
+                android:id="@+id/playlistButton"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_playlist"
+                android:scaleType="centerInside"
+                android:padding="8dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="65dp" />
+
+        <!-- 설정 버튼 -->
+        <ImageView
+                android:id="@+id/settingsButton"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_setting"
+                android:scaleType="centerInside"
+                android:layout_marginStart="15dp"
+                android:padding="1dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

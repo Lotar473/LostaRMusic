@@ -1,5 +1,6 @@
 package com.enteras.projectlostar.lostarmusic
 
+import android.content.Intent
 import android.graphics.drawable.TransitionDrawable
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -69,6 +70,8 @@ class MainActivity : AppCompatActivity() {
             MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_7, R.raw.music2),
             MusicData("We'll Meet Again", "TheFatRat & Laura Brehm", "3:15", R.drawable.music_album_icon_4, R.raw.music4),
             MusicData("Shiawase (VIP)", "Dion Timmer", "3:02", R.drawable.music_album_icon_3, R.raw.music5),
+            MusicData("KOCMOC UNLEASHED", "G2961", "1:29", R.drawable.music_album_icon_8, R.raw.music6),
+            MusicData("Lone (Slow Hours Remix)", "What So Not", "4:33", R.drawable.music_album_icon_9, R.raw.music7),
             MusicData("i love you jxnso", "so cute", "4:08", R.drawable.music_album_icon_1, R.raw.music4)
             // 다른 음악들 추가
         )
@@ -77,5 +80,19 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = MusicAdapter(this, musicList)
+
+        // 버튼들에 클릭 리스너 설정
+        findViewById<ImageView>(R.id.homeButton).setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+        findViewById<ImageView>(R.id.playlistButton).setOnClickListener {
+            startActivity(Intent(this, PlaylistActivity::class.java))
+        }
+
+        findViewById<ImageView>(R.id.settingsButton).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
     }
 }
