@@ -17,19 +17,27 @@ class SettingsActivity : AppCompatActivity() {
         val menuBarLayout = findViewById<LinearLayout>(R.id.menu_bar_layout)
 
         // 홈 버튼 클릭 시 MainActivity로 이동
-        menuBarLayout.findViewById<ImageView>(R.id.homeButton).setOnClickListener {
+        val homeButton = menuBarLayout.findViewById<ImageView>(R.id.homeButton)
+        homeButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
         // 플레이리스트 버튼 클릭 시 PlaylistActivity로 이동
-        menuBarLayout.findViewById<ImageView>(R.id.playlistButton).setOnClickListener {
+        val playlistButton = menuBarLayout.findViewById<ImageView>(R.id.playlistButton)
+        playlistButton.setOnClickListener {
             startActivity(Intent(this, PlaylistActivity::class.java))
         }
 
-        // 설정 버튼 클릭 시 SettingsActivity로 이동 (현재 화면이므로 아무 동작도 하지 않음)
-        menuBarLayout.findViewById<ImageView>(R.id.settingsButton).setOnClickListener {
-            // 이미 현재 화면이므로 아무 동작도 하지 않음
+        // 설정 버튼 클릭 시 설정 상태를 표시
+        val settingsButton = menuBarLayout.findViewById<ImageView>(R.id.settingsButton)
+        settingsButton.setOnClickListener {
+            // 이미지를 변경하여 선택된 상태를 표시
+            settingsButton.setImageResource(R.drawable.ic_setting_clicked)
+
+            // 다른 버튼들의 선택 상태를 초기화
+            homeButton.setImageResource(R.drawable.ic_home)
+            playlistButton.setImageResource(R.drawable.ic_playlist)
         }
 
         // 음악 리스트 표시

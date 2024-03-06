@@ -27,7 +27,7 @@
             android:textColor="@android:color/white"
             android:textSize="30sp"
             android:fontFamily="@font/seoul_namsan_eb"
-            android:layout_marginTop="-95dp"/>
+            android:layout_marginTop="-80dp"/>
 
     <TextView
             android:id="@+id/timeRemainingTextView"
@@ -112,8 +112,8 @@
 
     <ImageView
             android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="20dp"

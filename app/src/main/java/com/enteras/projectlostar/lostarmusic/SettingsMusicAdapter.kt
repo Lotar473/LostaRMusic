@@ -38,7 +38,13 @@ class SettingsMusicAdapter(private val context: Context, private val musicList: 
 
         fun bind(musicData: MusicData) {
             titleTextView.text = musicData.title
-            artistTextView.text = musicData.artist
+            // 아티스트 이름이 25자를 넘으면 "..."으로 표시하고, 그렇지 않으면 원래 이름을 표시
+            val artistName = if (musicData.artist.length > 25) {
+                "${musicData.artist.substring(0, 25)}..."
+            } else {
+                musicData.artist
+            }
+            artistTextView.text = artistName
             durationTextView.text = musicData.duration
             albumImageView.setImageResource(musicData.albumImageResId)
         }
@@ -47,7 +53,7 @@ class SettingsMusicAdapter(private val context: Context, private val musicList: 
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 val musicData = musicList[position]
-                val intent = Intent(context, MusicPlayerActivity::class.java).apply {
+                val intent = Intent(context, SettingsMusicPlayerActivity::class.java).apply {
                     putExtra("music_data", musicData)
                 }
                 context.startActivity(intent)

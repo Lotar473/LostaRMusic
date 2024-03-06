@@ -25,9 +25,13 @@
                 android:name=".MusicPlayerActivity"
                 android:exported="true"/>
         <activity
+                android:name=".SettingsMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".SettingsActivity"
                 android:exported="true">
         </activity>
+
     </application>
 
 </manifest>

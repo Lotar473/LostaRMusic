@@ -16,48 +16,44 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    <!-- 메뉴 바 -->
     <LinearLayout
-            android:id="@+id/menuBar"
+            android:id="@+id/menu_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
             android:background="@color/black"
-            android:orientation="horizontal">
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical">
 
         <!-- 홈 버튼 -->
         <ImageView
                 android:id="@+id/homeButton"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
                 android:src="@drawable/ic_home"
                 android:scaleType="centerInside"
                 android:padding="8dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="70dp" />
+                android:layout_weight="1" />
 
         <!-- 플레이리스트 버튼 -->
         <ImageView
                 android:id="@+id/playlistButton"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
                 android:src="@drawable/ic_playlist"
                 android:scaleType="centerInside"
                 android:padding="8dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="65dp" />
+                android:layout_weight="1" />
 
         <!-- 설정 버튼 -->
         <ImageView
                 android:id="@+id/settingsButton"
-                android:layout_width="40dp"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_setting"
                 android:scaleType="centerInside"
-                android:layout_marginStart="15dp"
-                android:padding="1dp"/>
-
+                android:padding="1dp"
+                android:layout_weight="1"/>
     </LinearLayout>
 
 </RelativeLayout>
