@@ -27,7 +27,7 @@
             android:textColor="@android:color/white"
             android:textSize="30sp"
             android:fontFamily="@font/seoul_namsan_eb"
-            android:layout_marginTop="-80dp"/>
+            android:layout_marginTop="-90dp"/>
 
     <TextView
             android:id="@+id/timeRemainingTextView"

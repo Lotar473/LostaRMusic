@@ -3,7 +3,7 @@
                 android:id="@+id/rootLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_main_1">
+                android:background="@color/black">
 
     <ImageView
             android:id="@+id/loadingImageView"
