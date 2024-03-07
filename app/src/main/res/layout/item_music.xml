@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
-            android:text="Developed by: LotaR\nSpecial Thanks to Jinseo, roa616\nDesigned by: LotaR\nhttps://github.com/Lotar473/LostaRMusic\nCopyrightⓒ 2024. LostaR. All rights reserved."
+            android:text="Developed by: LotaR\nSpecial Thanks to Jinseo, roa616"
             android:layout_marginTop="20dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->

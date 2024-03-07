@@ -55,6 +55,10 @@ class SettingsActivity : AppCompatActivity() {
             MusicData("KOCMOC UNLEASHED", "G2961", "1:29", R.drawable.music_album_icon_8, R.raw.music6),
             MusicData("Lone (Slow Hours Remix)", "What So Not", "4:33", R.drawable.music_album_icon_9, R.raw.music7),
             MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8),
+            MusicData("R", "Plum", "2:26", R.drawable.music_album_icon_11, R.raw.music9),
+            MusicData("Terrasphere", "Plum", "2:34", R.drawable.music_album_icon_12, R.raw.music10),
+            MusicData("PLUM MEGAMIX", "Plum", "10:03", R.drawable.music_album_icon_13, R.raw.music11),
+            MusicData("PLUM MEGAMIX 2", "Plum", "11:36", R.drawable.music_album_icon_14, R.raw.music12),
             MusicData("i love you jinseo!!!", "so cute", "4:08", R.drawable.music_album_icon_1, R.raw.music4)
             // 다른 음악들 추가
         )

@@ -140,6 +140,10 @@ class SettingsMusicPlayerActivity : AppCompatActivity() {
         musicList.add(MusicData("KOCMOC UNLEASHED", "G2961", "1:29", R.drawable.music_album_icon_8, R.raw.music6))
         musicList.add(MusicData("Lone (Slow Hours Remix)", "What So Not", "4:33", R.drawable.music_album_icon_9, R.raw.music7))
         musicList.add(MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8))
+        musicList.add(MusicData("R", "Plum", "2:26", R.drawable.music_album_icon_11, R.raw.music9))
+        musicList.add(MusicData("Terrasphere", "Plum", "2:34", R.drawable.music_album_icon_12, R.raw.music10))
+        musicList.add(MusicData("PLUM MEGAMIX", "Plum", "10:03", R.drawable.music_album_icon_13, R.raw.music11))
+        musicList.add(MusicData("PLUM MEGAMIX 2", "Plum", "11:36", R.drawable.music_album_icon_14, R.raw.music12))
         // Add additional music data here if needed
     }
 
