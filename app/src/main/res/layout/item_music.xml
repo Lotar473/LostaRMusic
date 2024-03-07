@@ -40,7 +40,7 @@
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
             android:text="개발자 추천 음악"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:padding="10dp"
             android:textColor="#FFFFFF"/>
 
@@ -71,7 +71,7 @@
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
             android:text="추천 음악"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
 
@@ -116,7 +116,7 @@
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
             android:text="재생목록"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
 
