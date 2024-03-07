@@ -72,7 +72,7 @@
             android:textSize="20sp"
             android:text="추천 음악"
             android:layout_marginTop="20dp"
-            android:padding="1dp"
+            android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
 
     <!-- 앨범 아이콘 그리드 -->
