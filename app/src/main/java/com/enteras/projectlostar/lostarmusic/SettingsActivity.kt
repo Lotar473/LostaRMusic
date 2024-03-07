@@ -54,6 +54,7 @@ class SettingsActivity : AppCompatActivity() {
             MusicData("Shiawase (VIP)", "Dion Timmer", "3:02", R.drawable.music_album_icon_3, R.raw.music5),
             MusicData("KOCMOC UNLEASHED", "G2961", "1:29", R.drawable.music_album_icon_8, R.raw.music6),
             MusicData("Lone (Slow Hours Remix)", "What So Not", "4:33", R.drawable.music_album_icon_9, R.raw.music7),
+            MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8),
             MusicData("i love you jinseo!!!", "so cute", "4:08", R.drawable.music_album_icon_1, R.raw.music4)
             // 다른 음악들 추가
         )

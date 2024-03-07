@@ -139,6 +139,7 @@ class SettingsMusicPlayerActivity : AppCompatActivity() {
         musicList.add(MusicData("Shiawase (VIP)", "Dion Timmer", "3:02", R.drawable.music_album_icon_3, R.raw.music5))
         musicList.add(MusicData("KOCMOC UNLEASHED", "G2961", "1:29", R.drawable.music_album_icon_8, R.raw.music6))
         musicList.add(MusicData("Lone (Slow Hours Remix)", "What So Not", "4:33", R.drawable.music_album_icon_9, R.raw.music7))
+        musicList.add(MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8))
         // Add additional music data here if needed
     }
 

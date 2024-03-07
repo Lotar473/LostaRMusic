@@ -1,38 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/black"
+              android:orientation="vertical">
+
+    <!-- 로고와 검색 바 레이아웃 -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+        <!-- 로고 이미지 -->
+        <ImageView
+                android:id="@+id/logo_image_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/loading_1"
+                android:layout_marginRight="8dp"/>
+
+        <!-- 검색 바 -->
+        <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_weight="1"
+                android:fontFamily="@font/seoul_hangang_b"
+                android:padding="20dp"
+                android:hint="음악 검색..."
+                android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
+    </LinearLayout>
 
+    <!-- 상단 레이아웃 -->
     <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/seoul_namsan_b"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true"/>
-
-    <TextView
-            android:id="@+id/artistTextView"
+            android:id="@+id/recommended_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/seoul_namsan_b"
-            android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:layout_below="@id/titleTextView"/>
+            android:text="개발자 추천 음악"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"/>
 
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <!-- 앨범 아이콘 -->
+        <ImageView
+                android:id="@+id/album_icon_main"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/melodysheep_sun_mother_main"
+                android:layout_marginRight="8dp"/>
+
+    </LinearLayout>
+
+    <!-- "개발자 추천 음악" 텍스트 -->
+    <!-- 흰색으로 설정 -->
+
+    <!-- 텍스트 뷰 -->
     <TextView
-            android:id="@+id/durationTextView"
+            android:id="@+id/description_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/seoul_namsan_b"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:layout_below="@id/artistTextView"/>
+            android:textSize="20sp"
+            android:text="추천 음악"
+            android:layout_marginTop="20dp"
+            android:padding="1dp"
+            android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
 
+    <!-- 앨범 아이콘 그리드 -->
+    <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="1">
 
-</RelativeLayout>
+        <ImageView
+                android:id="@+id/album_icon_1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/music_album_icon_6"/>
+
+        <ImageView
+                android:id="@+id/album_icon_2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/music_album_icon_4"
+                android:padding="10dp"
+                android:layout_gravity="center"/>
+
+        <ImageView
+                android:id="@+id/album_icon_3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/music_album_icon_9"/>
+
+    </GridLayout>
+
+    <!-- 또 다른 텍스트 뷰 -->
+    <TextView
+            android:id="@+id/another_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/seoul_namsan_b"
+            android:textSize="20sp"
+            android:text="재생목록"
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
+            android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
+
+    <!-- 앨범 아이콘 그리드 -->
+    <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="1">
+
+        <ImageView
+                android:id="@+id/album_icon_4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/music_album_icon_10"/>
+
+        <ImageView
+                android:id="@+id/album_icon_5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/music_album_icon_1"/>
+
+        <ImageView
+                android:id="@+id/album_icon_6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/music_album_icon_2"/>
+
+    </GridLayout>
+
+    <!-- 더 많은 음악 찾기 텍스트 -->
+    <TextView
+            android:id="@+id/more_music_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/seoul_namsan_b"
+            android:textSize="20sp"
+            android:text="Developed by: LotaR\nSpecial Thanks to Jinseo, roa616\nDesigned by: LotaR\nhttps://github.com/Lotar473/LostaRMusic\nCopyrightⓒ 2024. LostaR. All rights reserved."
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
+            android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
+
+</LinearLayout>
