@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
-            android:text="재생목록"
+            android:text="아티스트별 재생목록"
             android:layout_marginTop="1dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
@@ -133,7 +133,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginStart="20dp"
-                android:src="@drawable/music_album_icon_10"/>
+                android:src="@drawable/hinkik_profile"/>
 
         <ImageView
                 android:id="@+id/album_icon_5"
@@ -141,7 +141,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_gravity="center"
-                android:src="@drawable/music_album_icon_1"/>
+                android:src="@drawable/thefatrat_profile"/>
 
         <ImageView
                 android:id="@+id/album_icon_6"
@@ -149,7 +149,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/music_album_icon_14"/>
+                android:src="@drawable/alanwalker_profile"/>
 
     </GridLayout>
 

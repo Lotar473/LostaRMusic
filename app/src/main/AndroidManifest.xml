@@ -34,13 +34,25 @@
                 android:name=".MainMusicPlayerActivity"
                 android:exported="true"/>
         <activity
-                android:name=".MainaAlbumIcon1MusicPlayerActivity"
+                android:name=".MainAlbumIcon1MusicPlayerActivity"
                 android:exported="true"/>
         <activity
-                android:name=".MainaAlbumIcon2MusicPlayerActivity"
+                android:name=".MainAlbumIcon2MusicPlayerActivity"
                 android:exported="true"/>
         <activity
-                android:name=".MainaAlbumIcon3MusicPlayerActivity"
+                android:name=".MainAlbumIcon3MusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".HinkikArtistPlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".HinkikArtistPlaylistMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".TheFatRatArtistPlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".AlanWalkerArtistPlaylistActivity"
                 android:exported="true">
         </activity>
 

@@ -57,17 +57,32 @@ class MainActivity : AppCompatActivity() {
 
         val mainAlbumIcon1 = itemMusicBinding.albumIcon1
         mainAlbumIcon1.setOnClickListener {
-            startActivity(Intent(this, MainaAlbumIcon1MusicPlayerActivity::class.java))
+            startActivity(Intent(this, MainAlbumIcon1MusicPlayerActivity::class.java))
         }
 
         val mainAlbumIcon2 = itemMusicBinding.albumIcon2
         mainAlbumIcon2.setOnClickListener {
-            startActivity(Intent(this, MainaAlbumIcon1MusicPlayerActivity::class.java))
+            startActivity(Intent(this, MainAlbumIcon2MusicPlayerActivity::class.java))
         }
 
         val mainAlbumIcon3 = itemMusicBinding.albumIcon3
         mainAlbumIcon3.setOnClickListener {
-            startActivity(Intent(this, MainaAlbumIcon1MusicPlayerActivity::class.java))
+            startActivity(Intent(this, MainAlbumIcon3MusicPlayerActivity::class.java))
+        }
+
+        val mainAlbumIcon4 = itemMusicBinding.albumIcon4
+        mainAlbumIcon4.setOnClickListener {
+            startActivity(Intent(this, HinkikArtistPlaylistActivity::class.java))
+        }
+
+        val mainAlbumIcon5 = itemMusicBinding.albumIcon5
+        mainAlbumIcon5.setOnClickListener {
+            startActivity(Intent(this, TheFatRatArtistPlaylistActivity::class.java))
+        }
+
+        val mainAlbumIcon6 = itemMusicBinding.albumIcon6
+        mainAlbumIcon6.setOnClickListener {
+            startActivity(Intent(this, AlanWalkerArtistPlaylistActivity::class.java))
         }
 
         // MenuBarLayout을 ItemMusic의 자식으로 추가
