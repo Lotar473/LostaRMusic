@@ -117,16 +117,18 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/ic_backto"/>
 
     <ImageView
             android:id="@+id/airpodsIcon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/ic_airpods_3rd_gen"/>
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/ic_airpods_3rd_gen"
+            android:visibility="gone" />
 
     <!-- SeekBar -->
     <SeekBar

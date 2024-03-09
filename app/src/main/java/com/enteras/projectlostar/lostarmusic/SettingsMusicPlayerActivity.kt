@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Looper
 import kotlin.random.Random
+import android.os.Build
+import android.view.View
 
 class SettingsMusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
@@ -50,6 +52,14 @@ class SettingsMusicPlayerActivity : AppCompatActivity() {
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
+
+        // Airpods 3rd Gen 모델 번호를 확인하여 아이콘을 표시
+        val airpodsModelNumbers = arrayOf("A2565", "A2564") // Airpods 3rd Gen 모델 번호 배열
+        val deviceModel = getDeviceModelNumber() // 장치의 모델 번호 가져오기
+        if (deviceModel in airpodsModelNumbers) {
+            val airpodsIcon = findViewById<ImageView>(R.id.airpodsIcon)
+            airpodsIcon.visibility = View.VISIBLE
+        }
 
         setMusic(currentMusicIndex)
 
@@ -286,5 +296,9 @@ class SettingsMusicPlayerActivity : AppCompatActivity() {
     private fun playNextRandomMusic() {
         val nextIndex = getRandomIndex()
         setMusic(nextIndex)
+    }
+
+    private fun getDeviceModelNumber(): String {
+        return Build.MODEL
     }
 }
