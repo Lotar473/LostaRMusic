@@ -32,6 +32,15 @@
                 android:exported="true"/>
         <activity
                 android:name=".MainMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".MainaAlbumIcon1MusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".MainaAlbumIcon2MusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".MainaAlbumIcon3MusicPlayerActivity"
                 android:exported="true">
         </activity>
 

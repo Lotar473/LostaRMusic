@@ -149,7 +149,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/music_album_icon_2"/>
+                android:src="@drawable/music_album_icon_14"/>
 
     </GridLayout>
 
@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
-            android:text="Developed by: LotaR\nSpecial Thanks to Jinseo, roa616"
+            android:text="Developed by: LotaR\nSpecial Thanks to Jinseo :heart:"
             android:layout_marginTop="20dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
