@@ -8,16 +8,18 @@
     <!-- 로고와 검색 바 레이아웃 -->
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
         <!-- 로고 이미지 -->
         <ImageView
                 android:id="@+id/logo_image_view"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/loading_1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_icon_circle"
                 android:layout_marginRight="8dp"/>
 
         <!-- 검색 바 -->
@@ -67,11 +69,11 @@
     <TextView
             android:id="@+id/description_text_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
             android:text="추천 음악"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="5dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
 
@@ -112,11 +114,11 @@
     <TextView
             android:id="@+id/another_text_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
             android:text="아티스트별 재생목록"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="5dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
 

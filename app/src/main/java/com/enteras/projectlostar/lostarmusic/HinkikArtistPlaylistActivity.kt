@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class HinkikArtistPlaylistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.menu_bar_layout_diff_background)
+        setContentView(R.layout.menu_bar_layout_hinkik_background)
 
         // 메뉴 바 추가
         val menuBarLayout = findViewById<LinearLayout>(R.id.menu_bar_layout)
