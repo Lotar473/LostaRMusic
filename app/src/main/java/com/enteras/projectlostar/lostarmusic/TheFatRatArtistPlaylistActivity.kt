@@ -47,25 +47,16 @@ class TheFatRatArtistPlaylistActivity : AppCompatActivity() {
     private fun displayMusicList() {
         // 음악 데이터 리스트 생성
         val musicList = listOf(
-            MusicData("PLAY", "Alan Walker, K-391, Tungevaag, Mangoo", "2:49", R.drawable.music_album_icon_5, R.raw.music1),
-            MusicData("Sad Sometimes", "Alan Walker, CORSAK & Huang Xiaoyun", "3:19", R.drawable.music_album_icon_6, R.raw.music2),
-            MusicData("Alone", "Alan Walker", "2:43", R.drawable.music_album_icon_7, R.raw.music2),
             MusicData("We'll Meet Again", "TheFatRat & Laura Brehm", "3:15", R.drawable.music_album_icon_4, R.raw.music4),
-            MusicData("Shiawase (VIP)", "Dion Timmer", "3:02", R.drawable.music_album_icon_3, R.raw.music5),
-            MusicData("KOCMOC UNLEASHED", "G2961", "1:29", R.drawable.music_album_icon_8, R.raw.music6),
-            MusicData("Lone (Slow Hours Remix)", "What So Not", "4:33", R.drawable.music_album_icon_9, R.raw.music7),
-            MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8),
-            MusicData("R", "Plum", "2:26", R.drawable.music_album_icon_11, R.raw.music9),
-            MusicData("Terrasphere", "Plum", "2:34", R.drawable.music_album_icon_12, R.raw.music10),
-            MusicData("PLUM MEGAMIX", "Plum", "10:03", R.drawable.music_album_icon_13, R.raw.music11),
-            MusicData("PLUM MEGAMIX 2", "Plum", "11:36", R.drawable.music_album_icon_14, R.raw.music12),
-            MusicData("i love you jinseo!!!", "so cute", "4:08", R.drawable.music_album_icon_1, R.raw.music4)
+            MusicData("Still Here With You", "TheFatRat", "2:28", R.drawable.music_album_icon_18, R.raw.music18),
+            MusicData("MAYDAY", "TheFatRat, Laura Brehm", "4:07", R.drawable.music_album_icon_19, R.raw.music19),
+            MusicData("Fly Away", "TheFatRat, Anjulie", "3:14", R.drawable.music_album_icon_20, R.raw.music20)
             // 다른 음악들 추가
         )
 
         // RecyclerView 초기화
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = SettingsMusicAdapter(this, musicList)
+        recyclerView.adapter = TheFatRatArtistPlaylistAdapter(this, musicList)
     }
 }
