@@ -53,7 +53,7 @@ class TheFatRatArtistPlaylistAdapter(private val context: Context, private val m
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 val musicData = musicList[position]
-                val intent = Intent(context, HinkikArtistPlaylistMusicPlayerActivity::class.java).apply {
+                val intent = Intent(context, TheFatRatArtistPlaylistMusicPlayerActivity::class.java).apply {
                     putExtra("music_data", musicData)
                 }
                 context.startActivity(intent)
