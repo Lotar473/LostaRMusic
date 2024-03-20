@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/seoul_namsan_b"
             android:textSize="20sp"
-            android:text="내 재생목록"
+            android:text="기타 재생목록"
             android:layout_marginTop="10dp"
             android:padding="8dp"
             android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
@@ -50,20 +50,22 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
+
+
             <ImageView
                     android:id="@+id/album_icon_1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="10dp"
                     android:layout_marginEnd="25dp"
-                    android:src="@drawable/music_album_icon_6"/>
+                    android:src="@drawable/music_album_icon_21"/>
 
             <TextView
                     android:id="@+id/album_icon_1_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"
-                    android:text="text_pl_1"
+                    android:text="Interstellar"
                     android:fontFamily="@font/seoul_namsan_b"
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="-3dp"/>
@@ -123,16 +125,7 @@
 
 
     <!-- 또 다른 텍스트 뷰 -->
-    <TextView
-            android:id="@+id/another_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/seoul_namsan_b"
-            android:textSize="20sp"
-            android:text="아티스트별 재생목록"
-            android:layout_marginTop="10dp"
-            android:padding="8dp"
-            android:textColor="#FFFFFF" /> <!-- 흰색으로 설정 -->
+    <!-- 흰색으로 설정 -->
 
     <!-- 앨범 아이콘 그리드 -->
     <GridLayout

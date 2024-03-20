@@ -58,7 +58,16 @@
                 android:name=".AlanWalkerArtistPlaylistActivity"
                 android:exported="true"/>
         <activity
+                android:name=".TheFatRatArtistPlaylistMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".PlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".InterstellarOSTPlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".InterstellarOSTPlaylistMusicPlayerActivity"
                 android:exported="true">
         </activity>
 

@@ -18,3 +18,8 @@
 18 = TheFatRat - Still Here With You [Chapter 5]
 19 = TheFatRat - MAYDAY feat. Laura Brehm
 20 = TheFatRat - Fly Away feat. Anjulie
+21 = Hans Zimmer - First Step
+22 = Hans Zimmer - Mountains
+23 = Hans Zimmer - No Time for Caution
+24 = Hans Zimmer - Detach
+25 = Hans Zimmer - S.T.A.Y.

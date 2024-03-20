@@ -151,7 +151,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/alanwalker_profile"/>
+                android:src="@drawable/music_album_icon_21"/>
 
     </GridLayout>
 

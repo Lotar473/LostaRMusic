@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class TheFatRatArtistPlaylistActivity : AppCompatActivity() {
+class InterstellarOSTPlaylistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.menu_bar_layout_thefatrat_background)
+        setContentView(R.layout.menu_bar_layout_interstellar_background)
 
         // 메뉴 바 추가
         val menuBarLayout = findViewById<LinearLayout>(R.id.menu_bar_layout)
@@ -50,16 +50,16 @@ class TheFatRatArtistPlaylistActivity : AppCompatActivity() {
     private fun displayMusicList() {
         // 음악 데이터 리스트 생성
         val musicList = listOf(
-            MusicData("We'll Meet Again", "TheFatRat & Laura Brehm", "3:15", R.drawable.music_album_icon_4, R.raw.music4),
-            MusicData("Still Here With You", "TheFatRat", "2:28", R.drawable.music_album_icon_18, R.raw.music18),
-            MusicData("MAYDAY", "TheFatRat, Laura Brehm", "4:07", R.drawable.music_album_icon_19, R.raw.music19),
-            MusicData("Fly Away", "TheFatRat, Anjulie", "3:14", R.drawable.music_album_icon_20, R.raw.music20)
-            // 다른 음악들 추가
+            MusicData("First Step", "Hans Zimmer", "1:47", R.drawable.music_album_icon_21, R.raw.music21),
+            MusicData("Mountains", "Hans Zimmer", "3:39", R.drawable.music_album_icon_21, R.raw.music22),
+            MusicData("No Time for Caution", "Hans Zimmer", "4:06", R.drawable.music_album_icon_21, R.raw.music23),
+            MusicData("Detach", "Hans Zimmer", "6:42", R.drawable.music_album_icon_21, R.raw.music24),
+            MusicData("S.T.A.Y.", "Hans Zimmer", "6:23", R.drawable.music_album_icon_21, R.raw.music25)
         )
 
         // RecyclerView 초기화
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = TheFatRatArtistPlaylistAdapter(this, musicList)
+        recyclerView.adapter = InterstellarOSTPlaylistAdapter(this, musicList)
     }
 }
