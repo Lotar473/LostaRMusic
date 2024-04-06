@@ -28,7 +28,7 @@ class PlaylistActivity : AppCompatActivity() {
 
         // 플레이리스트 버튼 클릭 시 PlaylistActivity로 이동
         menuBarBinding.playlistButton.setOnClickListener {
-            // 이미 PlaylistActivity를 표시하고 있으므로 아무런 동작을 하지 않거나 다시 자신을 표시할 수 있습니다.
+            menuBarBinding.playlistButton.setImageResource(R.drawable.ic_playlist_clicked)
         }
 
         // 설정 버튼 클릭 시 설정 상태를 표시
