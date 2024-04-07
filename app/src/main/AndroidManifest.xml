@@ -68,7 +68,16 @@
                 android:exported="true"/>
         <activity
                 android:name=".InterstellarOSTPlaylistMusicPlayerActivity"
+                android:exported="true"/>
+
+        <activity
+                android:name=".MelodysheepArtistPlaylistActivity"
+                android:exported="true"/>
+
+        <activity
+                android:name=".MelodysheepArtistPlaylistMusicPlayerActivity"
                 android:exported="true">
+
         </activity>
 
     </application>

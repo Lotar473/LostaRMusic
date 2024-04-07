@@ -9,11 +9,10 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
-import android.graphics.PorterDuff
 import android.os.Looper
 import kotlin.random.Random
 
-class MainMusicPlayerActivity : AppCompatActivity() {
+class MelodysheepArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var handler: Handler
     private lateinit var playPauseButton: ImageView
@@ -35,7 +34,7 @@ class MainMusicPlayerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_music_player_4)
+        setContentView(R.layout.activity_music_player)
 
         initMusicList()
 
@@ -53,16 +52,6 @@ class MainMusicPlayerActivity : AppCompatActivity() {
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
 
         setMusic(currentMusicIndex)
-
-        seekBar.progressDrawable.setColorFilter(
-            resources.getColor(R.color.white),
-            PorterDuff.Mode.SRC_IN
-        )
-
-        seekBar.thumb.setColorFilter(
-            resources.getColor(R.color.white),
-            PorterDuff.Mode.SRC_IN
-        )
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {
@@ -141,15 +130,12 @@ class MainMusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun initMusicList() {
-        musicList.add(MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8))
+        musicList.add(MusicData("Explorers", "Hinkik", "4:24", R.drawable.music_album_icon_15, R.raw.music13))
+        musicList.add(MusicData("Time Leaper", "Hinkik", "4:00", R.drawable.music_album_icon_17, R.raw.music15))
+        musicList.add(MusicData("Outbreaker", "Hinkik", "3:35", R.drawable.music_album_icon_16, R.raw.music14))
     }
 
     private fun setMusic(index: Int) {
-        if (musicList.isEmpty() || index < 0 || index >= musicList.size) {
-            // musicList가 비어 있거나 인덱스가 범위를 벗어나면 처리할 코드 추가
-            return
-        }
-
         val newIndex = if (isRandomPlayEnabled) getRandomIndex() else index
         val musicData = musicList[newIndex]
         val uri = Uri.parse("android.resource://${packageName}/${musicData.rawResId}")
