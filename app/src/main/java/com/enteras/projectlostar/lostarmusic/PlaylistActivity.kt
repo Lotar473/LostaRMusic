@@ -53,6 +53,11 @@ class PlaylistActivity : AppCompatActivity() {
             startActivity(Intent(this, InterstellarOSTPlaylistActivity::class.java))
         }
 
+        val albumIcon7 = binding.albumIcon7
+        albumIcon7.setOnClickListener {
+            startActivity(Intent(this, AHisaArtistPlaylistActivity::class.java))
+        }
+
         menuBarLayoutBinding = MenuBarLayoutBlackBinding.inflate(layoutInflater)
         val menuBarBinding = menuBarLayoutBinding
         val menuBarLayoutView = menuBarLayoutBinding.root

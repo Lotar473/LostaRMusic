@@ -167,7 +167,7 @@
             android:rowCount="1">
 
         <ImageView
-                android:id="@+id/music_album_icon_7"
+                android:id="@+id/album_icon_7"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="10dp"
@@ -175,7 +175,7 @@
                 android:src="@drawable/a_hisa_profile"/>
 
         <ImageView
-                android:id="@+id/album_icon_8"
+                android:id="@+id/icon_8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="10dp"
@@ -183,7 +183,7 @@
                 android:src="@drawable/thefatrat_profile"/>
 
         <ImageView
-                android:id="@+id/album_icon_9"
+                android:id="@+id/icon_9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="10dp"
