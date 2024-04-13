@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Looper
+import android.widget.Toast
 import kotlin.random.Random
 
 class MainMusicPlayerActivity : AppCompatActivity() {
@@ -32,6 +33,7 @@ class MainMusicPlayerActivity : AppCompatActivity() {
     private var isRepeatEnabled: Boolean = false
     private var isRandomPlayEnabled: Boolean = false
     private var playedIndexes: MutableList<Int> = mutableListOf()
+    private lateinit var airpodsIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +53,13 @@ class MainMusicPlayerActivity : AppCompatActivity() {
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
+        airpodsIcon = findViewById(R.id.airpods3Icon)
 
         setMusic(currentMusicIndex)
+
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
 
         seekBar.progressDrawable.setColorFilter(
             resources.getColor(R.color.white),

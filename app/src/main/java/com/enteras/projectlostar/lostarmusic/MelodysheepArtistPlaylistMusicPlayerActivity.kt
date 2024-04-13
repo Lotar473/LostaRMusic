@@ -9,7 +9,9 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Looper
+import android.widget.Toast
 import kotlin.random.Random
 
 class MelodysheepArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
@@ -31,10 +33,11 @@ class MelodysheepArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     private var isRepeatEnabled: Boolean = false
     private var isRandomPlayEnabled: Boolean = false
     private var playedIndexes: MutableList<Int> = mutableListOf()
+    private lateinit var airpodsIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_music_player)
+        setContentView(R.layout.activity_music_player_4)
 
         initMusicList()
 
@@ -50,8 +53,23 @@ class MelodysheepArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
+        airpodsIcon = findViewById(R.id.airpods3Icon)
 
         setMusic(currentMusicIndex)
+
+        seekBar.progressDrawable.setColorFilter(
+            resources.getColor(R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
+
+        seekBar.thumb.setColorFilter(
+            resources.getColor(R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
+
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {
@@ -82,7 +100,7 @@ class MelodysheepArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MelodysheepArtistPlaylistActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -130,9 +148,9 @@ class MelodysheepArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun initMusicList() {
-        musicList.add(MusicData("Explorers", "Hinkik", "4:24", R.drawable.music_album_icon_15, R.raw.music13))
-        musicList.add(MusicData("Time Leaper", "Hinkik", "4:00", R.drawable.music_album_icon_17, R.raw.music15))
-        musicList.add(MusicData("Outbreaker", "Hinkik", "3:35", R.drawable.music_album_icon_16, R.raw.music14))
+        musicList.add(MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8))
+        musicList.add(MusicData("Hymn for the Human Race", "Melodysheep", "3:20", R.drawable.music_album_icon_22, R.raw.music26))
+        musicList.add(MusicData("The Rising Dawn Bellows Like Thunder", "Melodysheep", "4:12", R.drawable.music_album_icon_10, R.raw.music27))
     }
 
     private fun setMusic(index: Int) {

@@ -9,8 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MelodysheepArtistPlaylistAdapter(private val context: Context, private val musicList: List<MusicData>) :
-    RecyclerView.Adapter<MelodysheepArtistPlaylistAdapter.ViewHolder>() {
+class AHisaArtistPlaylistAdapter(private val context: Context, private val musicList: List<MusicData>) :
+    RecyclerView.Adapter<AHisaArtistPlaylistAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_music_data_list, parent, false)
@@ -53,7 +53,7 @@ class MelodysheepArtistPlaylistAdapter(private val context: Context, private val
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 val musicData = musicList[position]
-                val intent = Intent(context, MelodysheepArtistPlaylistMusicPlayerActivity::class.java).apply {
+                val intent = Intent(context, AHisaArtistPlaylistMusicPlayerActivity::class.java).apply {
                     putExtra("music_data", musicData)
                 }
                 context.startActivity(intent)

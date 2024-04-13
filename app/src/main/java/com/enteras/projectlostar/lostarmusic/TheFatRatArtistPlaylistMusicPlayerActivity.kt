@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Looper
+import android.widget.Toast
 import kotlin.random.Random
 
 class TheFatRatArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
@@ -31,6 +32,7 @@ class TheFatRatArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     private var isRepeatEnabled: Boolean = false
     private var isRandomPlayEnabled: Boolean = false
     private var playedIndexes: MutableList<Int> = mutableListOf()
+    private lateinit var airpodsIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +52,13 @@ class TheFatRatArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
+        airpodsIcon = findViewById(R.id.airpods3Icon)
 
         setMusic(currentMusicIndex)
+
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {
@@ -82,7 +89,7 @@ class TheFatRatArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, TheFatRatArtistPlaylistActivity::class.java)
             startActivity(intent)
             finish()
         }

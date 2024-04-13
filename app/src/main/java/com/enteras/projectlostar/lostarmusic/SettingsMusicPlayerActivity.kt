@@ -60,12 +60,16 @@ class SettingsMusicPlayerActivity : AppCompatActivity() {
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
-        airpodsIcon = findViewById(R.id.airpodsIcon)
+        airpodsIcon = findViewById(R.id.airpods3Icon)
 
         // 블루투스 권한 요청
         requestBluetoothPermission()
 
         setMusic(currentMusicIndex)
+
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {

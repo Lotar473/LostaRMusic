@@ -9,11 +9,12 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Looper
 import android.widget.Toast
 import kotlin.random.Random
 
-class HinkikArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
+class AHisaArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var handler: Handler
     private lateinit var playPauseButton: ImageView
@@ -36,7 +37,7 @@ class HinkikArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_music_player)
+        setContentView(R.layout.activity_music_player_4)
 
         initMusicList()
 
@@ -55,6 +56,16 @@ class HinkikArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
         airpodsIcon = findViewById(R.id.airpods3Icon)
 
         setMusic(currentMusicIndex)
+
+        seekBar.progressDrawable.setColorFilter(
+            resources.getColor(R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
+
+        seekBar.thumb.setColorFilter(
+            resources.getColor(R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
 
         airpodsIcon.setOnClickListener{
             Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
@@ -89,7 +100,7 @@ class HinkikArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, HinkikArtistPlaylistActivity::class.java)
+            val intent = Intent(this, AHisaArtistPlaylistActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -137,9 +148,9 @@ class HinkikArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun initMusicList() {
-        musicList.add(MusicData("Explorers", "Hinkik", "4:24", R.drawable.music_album_icon_15, R.raw.music13))
-        musicList.add(MusicData("Time Leaper", "Hinkik", "4:00", R.drawable.music_album_icon_17, R.raw.music15))
-        musicList.add(MusicData("Outbreaker", "Hinkik", "3:35", R.drawable.music_album_icon_16, R.raw.music14))
+        musicList.add(MusicData("Smoked Turkey Rag", "a_hisa", "2:32", R.drawable.music_album_icon_10, R.raw.music29))
+        musicList.add(MusicData("Butterfly", "a_hisa", "2:13", R.drawable.music_album_icon_22, R.raw.music30))
+        musicList.add(MusicData("The Rising Dawn Bellows Like Thunder", "Melodysheep", "4:12", R.drawable.music_album_icon_10, R.raw.music27))
     }
 
     private fun setMusic(index: Int) {

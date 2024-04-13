@@ -9,7 +9,9 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Looper
+import android.widget.Toast
 import kotlin.random.Random
 
 class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
@@ -31,6 +33,7 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
     private var isRepeatEnabled: Boolean = false
     private var isRandomPlayEnabled: Boolean = false
     private var playedIndexes: MutableList<Int> = mutableListOf()
+    private lateinit var airpodsIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +53,23 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
+        airpodsIcon = findViewById(R.id.airpods3Icon)
 
         setMusic(currentMusicIndex)
+
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
+
+        seekBar.progressDrawable.setColorFilter(
+            resources.getColor(R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
+
+        seekBar.thumb.setColorFilter(
+            resources.getColor(R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {
@@ -82,7 +100,7 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, InterstellarOSTPlaylistActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -135,6 +153,7 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
         musicList.add(MusicData("No Time for Caution", "Hans Zimmer", "4:06", R.drawable.music_album_icon_21, R.raw.music23))
         musicList.add(MusicData("Detach", "Hans Zimmer", "6:42", R.drawable.music_album_icon_21, R.raw.music24))
         musicList.add(MusicData("S.T.A.Y.", "Hans Zimmer", "6:23", R.drawable.music_album_icon_21, R.raw.music25))
+        musicList.add(MusicData("Time", "Hans Zimmer", "4:35", R.drawable.music_album_icon_23, R.raw.music28))
     }
 
     private fun setMusic(index: Int) {

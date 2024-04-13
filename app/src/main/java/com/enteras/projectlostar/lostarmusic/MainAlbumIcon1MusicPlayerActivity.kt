@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Looper
+import android.widget.Toast
 
 class MainAlbumIcon1MusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
@@ -30,6 +31,7 @@ class MainAlbumIcon1MusicPlayerActivity : AppCompatActivity() {
     private var isRepeatEnabled: Boolean = false
     private var isRandomPlayEnabled: Boolean = false
     private var playedIndexes: MutableList<Int> = mutableListOf()
+    private lateinit var airpodsIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,8 +51,13 @@ class MainAlbumIcon1MusicPlayerActivity : AppCompatActivity() {
         artistTextView = findViewById(R.id.artistTextView)
         albumImageView = findViewById(R.id.albumImageView)
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView)
+        airpodsIcon = findViewById(R.id.airpods3Icon)
 
         setMusic(currentMusicIndex)
+
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {

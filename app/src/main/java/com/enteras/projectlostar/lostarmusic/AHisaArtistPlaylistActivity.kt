@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MelodysheepArtistPlaylistActivity : AppCompatActivity() {
+class AHisaArtistPlaylistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.menu_bar_layout_melodysheep_background)
@@ -47,8 +47,8 @@ class MelodysheepArtistPlaylistActivity : AppCompatActivity() {
     private fun displayMusicList() {
         // 음악 데이터 리스트 생성
         val musicList = listOf(
-            MusicData("Sun Mother", "Melodysheep", "3:36", R.drawable.music_album_icon_10, R.raw.music8),
-            MusicData("Hymn for the Human Race", "Melodysheep", "3:20", R.drawable.music_album_icon_22, R.raw.music26),
+            MusicData("Smoked Turkey Rag", "a_hisa", "2:32", R.drawable.music_album_icon_24, R.raw.music29),
+            MusicData("Butterfly", "a_hisa", "2:13", R.drawable.music_album_icon_25, R.raw.music30),
             MusicData("The Rising Dawn Bellows Like Thunder", "Melodysheep", "4:12", R.drawable.music_album_icon_10, R.raw.music27)
         )
 

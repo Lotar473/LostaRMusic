@@ -54,7 +54,8 @@ class InterstellarOSTPlaylistActivity : AppCompatActivity() {
             MusicData("Mountains", "Hans Zimmer", "3:39", R.drawable.music_album_icon_21, R.raw.music22),
             MusicData("No Time for Caution", "Hans Zimmer", "4:06", R.drawable.music_album_icon_21, R.raw.music23),
             MusicData("Detach", "Hans Zimmer", "6:42", R.drawable.music_album_icon_21, R.raw.music24),
-            MusicData("S.T.A.Y.", "Hans Zimmer", "6:23", R.drawable.music_album_icon_21, R.raw.music25)
+            MusicData("S.T.A.Y.", "Hans Zimmer", "6:23", R.drawable.music_album_icon_21, R.raw.music25),
+            MusicData("Time", "Hans Zimmer", "4:35", R.drawable.music_album_icon_23, R.raw.music28)
         )
 
         // RecyclerView 초기화

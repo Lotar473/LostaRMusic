@@ -57,14 +57,14 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="10dp"
-                    android:layout_marginEnd="25dp"
+                    android:layout_marginEnd="5dp"
                     android:src="@drawable/music_album_icon_21"/>
 
             <TextView
                     android:id="@+id/album_icon_1_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="25dp"
+                    android:layout_marginEnd="5dp"
                     android:text="Interstellar"
                     android:fontFamily="@font/seoul_namsan_b"
                     android:textColor="#FFFFFF"
@@ -108,14 +108,14 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="10dp"
-                    android:layout_marginStart="25dp"
+                    android:layout_marginStart="5dp"
                     android:src="@drawable/music_album_icon_9"/>
 
             <TextView
                     android:id="@+id/album_icon_3_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
+                    android:layout_marginStart="5dp"
                     android:text="text_pl_3"
                     android:fontFamily="@font/seoul_namsan_b"
                     android:textColor="#FFFFFF"
@@ -156,7 +156,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/alanwalker_profile"/>
+                android:src="@drawable/music_album_icon_23"/>
 
     </GridLayout>
 
@@ -172,7 +172,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginStart="20dp"
-                android:src="@drawable/melodysheep_profile"/>
+                android:src="@drawable/a_hisa_profile"/>
 
         <ImageView
                 android:id="@+id/album_icon_8"

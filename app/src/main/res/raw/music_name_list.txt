@@ -23,3 +23,8 @@
 23 = Hans Zimmer - No Time for Caution
 24 = Hans Zimmer - Detach
 25 = Hans Zimmer - S.T.A.Y.
+26 = Melodysheep - Hymn for the Human Race
+27 = Melodysheep - The Rising Dawn Bellows Like Thunder
+28 = Hans Zimmer - Time
+29 = a_hisa - Smoked Turkey Rag
+30 = a_hisa - Butterfly
