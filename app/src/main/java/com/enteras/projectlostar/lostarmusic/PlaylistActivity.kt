@@ -50,7 +50,7 @@ class PlaylistActivity : AppCompatActivity() {
 
         val albumIcon6 = binding.albumIcon6
         albumIcon6.setOnClickListener {
-            startActivity(Intent(this, InterstellarOSTPlaylistActivity::class.java))
+            startActivity(Intent(this, YOASOBIArtistPlaylistActivity::class.java))
         }
 
         val albumIcon7 = binding.albumIcon7

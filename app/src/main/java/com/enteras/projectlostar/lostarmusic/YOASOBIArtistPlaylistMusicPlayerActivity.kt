@@ -14,7 +14,7 @@ import android.os.Looper
 import android.widget.Toast
 import kotlin.random.Random
 
-class AHisaArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
+class YOASOBIArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var handler: Handler
     private lateinit var playPauseButton: ImageView
@@ -37,7 +37,7 @@ class AHisaArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_music_player_4)
+        setContentView(R.layout.activity_music_player_5)
 
         initMusicList()
 
@@ -100,7 +100,7 @@ class AHisaArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, AHisaArtistPlaylistActivity::class.java)
+            val intent = Intent(this, YOASOBIArtistPlaylistActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -148,9 +148,9 @@ class AHisaArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun initMusicList() {
-        musicList.add(MusicData("Smoked Turkey Rag", "a_hisa", "2:32", R.drawable.music_album_icon_24, R.raw.music29))
-        musicList.add(MusicData("Butterfly", "a_hisa", "2:13", R.drawable.music_album_icon_25, R.raw.music30))
-        musicList.add(MusicData("The Rising Dawn Bellows Like Thunder", "Melodysheep", "4:12", R.drawable.music_album_icon_10, R.raw.music27))
+        musicList.add(MusicData("アイドル", "YOASOBI", "3:45", R.drawable.music_album_icon_27, R.raw.music31))
+        musicList.add(MusicData("夜に駆ける", "YOASOBI", "4:21", R.drawable.music_album_icon_26, R.raw.music32))
+        musicList.add(MusicData("群青", "YOASOBI", "4:08", R.drawable.music_album_icon_28, R.raw.music33))
     }
 
     private fun setMusic(index: Int) {

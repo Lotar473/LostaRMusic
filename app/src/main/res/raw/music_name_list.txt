@@ -28,3 +28,10 @@
 28 = Hans Zimmer - Time
 29 = a_hisa - Smoked Turkey Rag
 30 = a_hisa - Butterfly
+31 = YOASOBI - アイドル
+32 = YOASOBI - 夜に駆ける
+33 = YOASOBI - 群青
+34 = Natalie Holt - Loki Green Theme
+35 = Natalie Holt - TVA
+36 = Natalie Holt - Purpose Is Glorious
+37 = Natalie Holt - History Is Now

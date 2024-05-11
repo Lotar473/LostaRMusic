@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class AHisaArtistPlaylistActivity : AppCompatActivity() {
+class NatalieHoltArtistPlaylistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.menu_bar_layout_melodysheep_background)
+        setContentView(R.layout.menu_bar_layout_yoasobi_background)
 
         // 메뉴 바 추가
         val menuBarLayout = findViewById<LinearLayout>(R.id.menu_bar_layout)
@@ -47,14 +47,14 @@ class AHisaArtistPlaylistActivity : AppCompatActivity() {
     private fun displayMusicList() {
         // 음악 데이터 리스트 생성
         val musicList = listOf(
-            MusicData("Smoked Turkey Rag", "a_hisa", "2:32", R.drawable.music_album_icon_24, R.raw.music29),
-            MusicData("Butterfly", "a_hisa", "2:13", R.drawable.music_album_icon_25, R.raw.music30),
-            MusicData("The Rising Dawn Bellows Like Thunder", "Melodysheep", "4:12", R.drawable.music_album_icon_10, R.raw.music27)
+            MusicData("アイドル", "YOASOBI", "3:45", R.drawable.music_album_icon_27, R.raw.music31),
+            MusicData("夜に駆ける", "YOASOBI", "4:21", R.drawable.music_album_icon_26, R.raw.music32),
+            MusicData("群青", "YOASOBI", "4:08", R.drawable.music_album_icon_28, R.raw.music33)
         )
 
         // RecyclerView 초기화
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = AHisaArtistPlaylistAdapter(this, musicList)
+        recyclerView.adapter =NatalieHoltArtistPlaylistAdapter(this, musicList)
     }
 }

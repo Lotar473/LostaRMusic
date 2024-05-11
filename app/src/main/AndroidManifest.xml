@@ -76,6 +76,18 @@
 
         <activity
                 android:name=".MelodysheepArtistPlaylistMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".AHisaArtistPlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".AHisaArtistPlaylistMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".YOASOBIArtistPlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".YOASOBIArtistPlaylistMusicPlayerActivity"
                 android:exported="true">
 
         </activity>
