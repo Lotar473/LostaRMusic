@@ -12,9 +12,8 @@ import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Looper
 import android.widget.Toast
-import kotlin.random.Random
 
-class NatalieHoltArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
+class HansZimmerArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var handler: Handler
     private lateinit var playPauseButton: ImageView
@@ -37,7 +36,7 @@ class NatalieHoltArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_music_player_6)
+        setContentView(R.layout.activity_music_player_3)
 
         initMusicList()
 
@@ -57,6 +56,10 @@ class NatalieHoltArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         setMusic(currentMusicIndex)
 
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
+
         seekBar.progressDrawable.setColorFilter(
             resources.getColor(R.color.white),
             PorterDuff.Mode.SRC_IN
@@ -66,10 +69,6 @@ class NatalieHoltArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
             resources.getColor(R.color.white),
             PorterDuff.Mode.SRC_IN
         )
-
-        airpodsIcon.setOnClickListener{
-            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
-        }
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {
@@ -100,7 +99,7 @@ class NatalieHoltArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, NatalieHoltArtistPlaylistActivity::class.java)
+            val intent = Intent(this, HansZimmerArtistPlaylistActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -148,10 +147,12 @@ class NatalieHoltArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun initMusicList() {
-        musicList.add(MusicData("Loki Green Theme", "Natalie Holt", "2:24", R.drawable.music_album_icon_29, R.raw.music34))
-        musicList.add(MusicData("TVA", "Natalie Holt", "2:28", R.drawable.music_album_icon_29, R.raw.music35))
-        musicList.add(MusicData("Purpose Is Glorious", "Natalie Holt", "3:07", R.drawable.music_album_icon_30, R.raw.music36))
-        musicList.add(MusicData("History Is Now", "Natalie Holt", "2:32", R.drawable.music_album_icon_30, R.raw.music37))
+        musicList.add(MusicData("First Step", "Hans Zimmer", "1:47", R.drawable.music_album_icon_21, R.raw.music21))
+        musicList.add(MusicData("Mountains", "Hans Zimmer", "3:39", R.drawable.music_album_icon_21, R.raw.music22))
+        musicList.add(MusicData("No Time for Caution", "Hans Zimmer", "4:06", R.drawable.music_album_icon_21, R.raw.music23))
+        musicList.add(MusicData("Detach", "Hans Zimmer", "6:42", R.drawable.music_album_icon_21, R.raw.music24))
+        musicList.add(MusicData("S.T.A.Y.", "Hans Zimmer", "6:23", R.drawable.music_album_icon_21, R.raw.music25))
+        musicList.add(MusicData("Time", "Hans Zimmer", "4:35", R.drawable.music_album_icon_23, R.raw.music28))
     }
 
     private fun setMusic(index: Int) {

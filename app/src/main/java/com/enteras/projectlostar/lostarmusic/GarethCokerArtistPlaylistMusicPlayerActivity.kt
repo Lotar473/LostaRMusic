@@ -14,7 +14,7 @@ import android.os.Looper
 import android.widget.Toast
 import kotlin.random.Random
 
-class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
+class GarethCokerArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var handler: Handler
     private lateinit var playPauseButton: ImageView
@@ -37,7 +37,7 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_music_player_3)
+        setContentView(R.layout.activity_music_player_7)
 
         initMusicList()
 
@@ -57,10 +57,6 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         setMusic(currentMusicIndex)
 
-        airpodsIcon.setOnClickListener{
-            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
-        }
-
         seekBar.progressDrawable.setColorFilter(
             resources.getColor(R.color.white),
             PorterDuff.Mode.SRC_IN
@@ -70,6 +66,10 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
             resources.getColor(R.color.white),
             PorterDuff.Mode.SRC_IN
         )
+
+        airpodsIcon.setOnClickListener{
+            Toast.makeText(this, "AirPods(3세대) 연결됨", Toast.LENGTH_SHORT).show()
+        }
 
         playPauseButton.setOnClickListener {
             if (mediaPlayer.isPlaying) {
@@ -100,7 +100,7 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, InterstellarOSTPlaylistActivity::class.java)
+            val intent = Intent(this, YOASOBIArtistPlaylistActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -148,12 +148,15 @@ class InterstellarOSTPlaylistMusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun initMusicList() {
-        musicList.add(MusicData("First Step", "Hans Zimmer", "1:47", R.drawable.music_album_icon_21, R.raw.music21))
-        musicList.add(MusicData("Mountains", "Hans Zimmer", "3:39", R.drawable.music_album_icon_21, R.raw.music22))
-        musicList.add(MusicData("No Time for Caution", "Hans Zimmer", "4:06", R.drawable.music_album_icon_21, R.raw.music23))
-        musicList.add(MusicData("Detach", "Hans Zimmer", "6:42", R.drawable.music_album_icon_21, R.raw.music24))
-        musicList.add(MusicData("S.T.A.Y.", "Hans Zimmer", "6:23", R.drawable.music_album_icon_21, R.raw.music25))
-        musicList.add(MusicData("Time", "Hans Zimmer", "4:35", R.drawable.music_album_icon_23, R.raw.music28))
+        musicList.add(MusicData("Toys on a Tear (Shrunk)", "Gareth Coker", "2:30", R.drawable.music_album_icon_33, R.raw.music40))
+        musicList.add(MusicData("Dance of the Blocks (Shrunk)", "Gareth Coker", "2:15", R.drawable.music_album_icon_33, R.raw.music41))
+        musicList.add(MusicData("Master Builder (Shrunk)", "Gareth Coker", "2:35", R.drawable.music_album_icon_33, R.raw.music42))
+        musicList.add(MusicData("Double Time (Tumble)", "Gareth Coker", "1:14", R.drawable.music_album_icon_33, R.raw.music43))
+        musicList.add(MusicData("Nimbly Does It (Tumble)", "Gareth Coker", "1:10", R.drawable.music_album_icon_33, R.raw.music44))
+        musicList.add(MusicData("Chop Chop (Tumble)", "Gareth Coker", "1:06", R.drawable.music_album_icon_33, R.raw.music45))
+        musicList.add(MusicData("Agile Accelerando (Tumble)", "Gareth Coker", "1:11", R.drawable.music_album_icon_33, R.raw.music46))
+        musicList.add(MusicData("Lickety Split (Tumble)", "Gareth Coker", "1:12", R.drawable.music_album_icon_33, R.raw.music47))
+        musicList.add(MusicData("Time is of the Essence (Tumble)", "Gareth Coker", "1:04", R.drawable.music_album_icon_33, R.raw.music48))
     }
 
     private fun setMusic(index: Int) {

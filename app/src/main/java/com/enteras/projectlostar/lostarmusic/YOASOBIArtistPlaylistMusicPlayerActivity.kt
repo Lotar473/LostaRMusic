@@ -151,6 +151,8 @@ class YOASOBIArtistPlaylistMusicPlayerActivity : AppCompatActivity() {
         musicList.add(MusicData("アイドル", "YOASOBI", "3:45", R.drawable.music_album_icon_27, R.raw.music31))
         musicList.add(MusicData("夜に駆ける", "YOASOBI", "4:21", R.drawable.music_album_icon_26, R.raw.music32))
         musicList.add(MusicData("群青", "YOASOBI", "4:08", R.drawable.music_album_icon_28, R.raw.music33))
+        musicList.add(MusicData("怪物", "YOASOBI", "3:26", R.drawable.music_album_icon_32, R.raw.music39))
+        musicList.add(MusicData("勇者", "YOASOBI", "3:24", R.drawable.music_album_icon_31, R.raw.music38))
     }
 
     private fun setMusic(index: Int) {

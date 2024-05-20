@@ -58,14 +58,14 @@
                     android:layout_height="100dp"
                     android:padding="10dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/music_album_icon_21"/>
+                    android:src="@drawable/thefatrat_profile"/>
 
             <TextView
                     android:id="@+id/album_icon_1_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:text="Interstellar"
+                    android:text="TheFatRat"
                     android:fontFamily="@font/seoul_namsan_b"
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="-7dp"/>
@@ -84,13 +84,13 @@
                     android:layout_height="100dp"
                     android:padding="10dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/music_album_icon_4"/>
+                    android:src="@drawable/hinkik_profile"/>
 
             <TextView
                     android:id="@+id/album_icon_2_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="text_pl_2"
+                    android:text="Hinkik"
                     android:fontFamily="@font/seoul_namsan_b"
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="-7dp"/>
@@ -109,14 +109,14 @@
                     android:layout_height="100dp"
                     android:padding="10dp"
                     android:layout_marginStart="5dp"
-                    android:src="@drawable/music_album_icon_9"/>
+                    android:src="@drawable/melodysheep_profile"/>
 
             <TextView
                     android:id="@+id/album_icon_3_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:text="text_pl_3"
+                    android:text="Melodysheep"
                     android:fontFamily="@font/seoul_namsan_b"
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="-7dp"/>
@@ -140,7 +140,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginStart="20dp"
-                android:src="@drawable/hinkik_profile"/>
+                android:src="@drawable/music_album_icon_21"/>
 
         <ImageView
                 android:id="@+id/album_icon_5"
@@ -148,7 +148,7 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_gravity="center"
-                android:src="@drawable/melodysheep_profile"/>
+                android:src="@drawable/music_album_icon_29"/>
 
         <ImageView
                 android:id="@+id/album_icon_6"
@@ -175,20 +175,84 @@
                 android:src="@drawable/a_hisa_profile"/>
 
         <ImageView
-                android:id="@+id/icon_8"
+                android:id="@+id/album_icon_8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_gravity="center"
-                android:src="@drawable/thefatrat_profile"/>
+                android:src="@drawable/alanwalker_profile"/>
 
         <ImageView
-                android:id="@+id/icon_9"
+                android:id="@+id/album_icon_9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/alanwalker_profile"/>
+                android:src="@drawable/music_album_icon_33"/>
+
+    </GridLayout>
+
+    <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="1">
+
+        <ImageView
+                android:id="@+id/album_icon_10"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/music_album_icon_32"/>
+
+        <ImageView
+                android:id="@+id/album_icon_11"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/music_album_icon_3"/>
+
+        <ImageView
+                android:id="@+id/album_icon_12"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/music_album_icon_26"/>
+
+    </GridLayout>
+
+    <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="1">
+
+        <ImageView
+                android:id="@+id/album_icon_13"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/music_album_icon_32"/>
+
+        <ImageView
+                android:id="@+id/album_icon_14"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/music_album_icon_3"/>
+
+        <ImageView
+                android:id="@+id/album_icon_15"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/music_album_icon_26"/>
 
     </GridLayout>
 

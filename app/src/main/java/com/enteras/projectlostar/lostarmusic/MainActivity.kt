@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
         val mainAlbumIcon6 = itemMusicBinding.albumIcon6
         mainAlbumIcon6.setOnClickListener {
-            startActivity(Intent(this, InterstellarOSTPlaylistActivity::class.java))
+            startActivity(Intent(this, HansZimmerArtistPlaylistActivity::class.java))
         }
 
         // MenuBarLayout을 ItemMusic의 자식으로 추가

@@ -9,8 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class InterstellarOSTPlaylistAdapter(private val context: Context, private val musicList: List<MusicData>) :
-    RecyclerView.Adapter<InterstellarOSTPlaylistAdapter.ViewHolder>() {
+class GarethCokerArtistPlaylistAdapter(private val context: Context, private val musicList: List<MusicData>) :
+    RecyclerView.Adapter<GarethCokerArtistPlaylistAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_music_data_list, parent, false)
@@ -53,7 +53,7 @@ class InterstellarOSTPlaylistAdapter(private val context: Context, private val m
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 val musicData = musicList[position]
-                val intent = Intent(context, InterstellarOSTPlaylistMusicPlayerActivity::class.java).apply {
+                val intent = Intent(context, GarethCokerArtistPlaylistMusicPlayerActivity::class.java).apply {
                     putExtra("music_data", musicData)
                 }
                 context.startActivity(intent)

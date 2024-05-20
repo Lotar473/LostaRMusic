@@ -64,10 +64,10 @@
                 android:name=".PlaylistActivity"
                 android:exported="true"/>
         <activity
-                android:name=".InterstellarOSTPlaylistActivity"
+                android:name=".HansZimmerArtistPlaylistActivity"
                 android:exported="true"/>
         <activity
-                android:name=".InterstellarOSTPlaylistMusicPlayerActivity"
+                android:name=".HansZimmerArtistPlaylistMusicPlayerActivity"
                 android:exported="true"/>
 
         <activity
@@ -88,6 +88,18 @@
                 android:exported="true"/>
         <activity
                 android:name=".YOASOBIArtistPlaylistMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".NatalieHoltArtistPlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".NatalieHoltArtistPlaylistMusicPlayerActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".GarethCokerArtistPlaylistActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".GarethCokerArtistPlaylistMusicPlayerActivity"
                 android:exported="true">
 
         </activity>

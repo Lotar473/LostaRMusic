@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class InterstellarOSTPlaylistActivity : AppCompatActivity() {
+class HansZimmerArtistPlaylistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.menu_bar_layout_interstellar_background)
@@ -61,6 +61,6 @@ class InterstellarOSTPlaylistActivity : AppCompatActivity() {
         // RecyclerView 초기화
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = InterstellarOSTPlaylistAdapter(this, musicList)
+        recyclerView.adapter = HansZimmerArtistPlaylistAdapter(this, musicList)
     }
 }

@@ -3,13 +3,9 @@ package com.enteras.projectlostar.lostarmusic
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.enteras.projectlostar.lostarmusic.databinding.ActivityPlaylistBinding
-import com.enteras.projectlostar.lostarmusic.databinding.MenuBarLayoutBinding
 import com.enteras.projectlostar.lostarmusic.databinding.MenuBarLayoutBlackBinding
-import com.enteras.projectlostar.lostarmusic.databinding.MenuBarLayoutInterstellarBackgroundBinding
-import com.enteras.projectlostar.lostarmusic.databinding.MenuBarLayoutMelodysheepBackgroundBinding
 
 class PlaylistActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlaylistBinding
@@ -24,28 +20,27 @@ class PlaylistActivity : AppCompatActivity() {
 
         val albumIcon1 = binding.albumIcon1
         albumIcon1.setOnClickListener {
-            startActivity(Intent(this, InterstellarOSTPlaylistActivity::class.java))
+            startActivity(Intent(this, TheFatRatArtistPlaylistActivity::class.java))
         }
 
         val albumIcon2 = binding.albumIcon2
         albumIcon2.setOnClickListener {
-            startActivity(Intent(this, TheFatRatArtistPlaylistActivity::class.java))
+            startActivity(Intent(this, HinkikArtistPlaylistActivity::class.java))
         }
 
-        //다른 아티스트 추가해야됨 (What So Not - Lone으로 임시 처리)
         val albumIcon3 = binding.albumIcon3
         albumIcon3.setOnClickListener {
-            startActivity(Intent(this,MainAlbumIcon3MusicPlayerActivity::class.java))
+            startActivity(Intent(this, MelodysheepArtistPlaylistActivity::class.java))
         }
 
         val albumIcon4 = binding.albumIcon4
         albumIcon4.setOnClickListener {
-            startActivity(Intent(this, HinkikArtistPlaylistActivity::class.java))
+            startActivity(Intent(this, HansZimmerArtistPlaylistActivity::class.java))
         }
 
         val albumIcon5 = binding.albumIcon5
         albumIcon5.setOnClickListener {
-            startActivity(Intent(this, MelodysheepArtistPlaylistActivity::class.java))
+            startActivity(Intent(this, NatalieHoltArtistPlaylistActivity::class.java))
         }
 
         val albumIcon6 = binding.albumIcon6
@@ -57,6 +52,25 @@ class PlaylistActivity : AppCompatActivity() {
         albumIcon7.setOnClickListener {
             startActivity(Intent(this, AHisaArtistPlaylistActivity::class.java))
         }
+
+        val albumIcon8 = binding.albumIcon8
+        albumIcon8.setOnClickListener {
+            startActivity(Intent(this, AlanWalkerArtistPlaylistActivity::class.java))
+        }
+
+        val albumIcon9 = binding.albumIcon9
+        albumIcon9.setOnClickListener{
+            startActivity(Intent(this, GarethCokerArtistPlaylistActivity::class.java))
+        }
+
+        val albumIcon10 = binding.albumIcon10
+        albumIcon10.setOnClickListener{}
+
+        val albumIcon11 = binding.albumIcon10
+        albumIcon11.setOnClickListener{}
+
+        val albumIcon12 = binding.albumIcon10
+        albumIcon12.setOnClickListener{}
 
         menuBarLayoutBinding = MenuBarLayoutBlackBinding.inflate(layoutInflater)
         val menuBarBinding = menuBarLayoutBinding

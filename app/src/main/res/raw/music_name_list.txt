@@ -35,3 +35,14 @@
 35 = Natalie Holt - TVA
 36 = Natalie Holt - Purpose Is Glorious
 37 = Natalie Holt - History Is Now
+38 = YOASOBI - 勇者
+39 = YOASOBI - 怪物
+40 = Gareth Coker - Toys on a Tear (Shrunk)
+41 = Gareth Coker - Dance of the Blocks (Shrunk)
+42 = Gareth Coker - Master Builder (Shrunk)
+43 = Gareth Coker - Double Time (Tumble)
+44 = Gareth Coker - Nimbly Does It (Tumble)
+45 = Gareth Coker - Chop Chop (Tumble)
+46 = Gareth Coker - Agile Accelerando (Tumble)
+47 = Gareth Coker - Lickety Split (Tumble)
+48 = Gareth Coker - Time is of the Essence (Tumble)
